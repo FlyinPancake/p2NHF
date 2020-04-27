@@ -2,23 +2,39 @@
 #define PALYA_HPP
 
 #include "allomas.hpp"
+#include "vonat.hpp"
+
 #include <string>
+using std::string;
+
+#include <iostream>
+using std::ifstream;
+using std::ofstream;
 
 class Palya
 {
 private:
- allomas
+    Allomas* allomasLista;
+    size_t hossz;
+    size_t maxHossz;
+
+    Vonat vonatok[];
+    size_t maxVonat;
+    size_t vonatszam;
 
 public:
     Palya();
-    Palya(Palya &&) = default;
-    Palya(const Palya &) = default;
-    Palya &operator=(Palya &&) = default;
-    Palya &operator=(const Palya &) = default;
+    Palya(ifstream is);
     ~Palya();
 
-private:
-    
+    void AddStation(string stationName);
+    void EditSation(string stationName, size_t sorszam);
+    void RemStation(size_t sorszam);
+
+    void AddTrain(Vonat v);
+    void RemTrain(Vonat v);
+
+    void Save(ofstream& os);
 };
 
 

@@ -1,18 +1,16 @@
 #ifndef ALLOMAS_HPP
 #define ALLOMAS_HPP
 
+#include <string>
+using std::string;
 class Allomas
 {
 public:
-    Allomas();
-    Allomas(Allomas &&) = default;
-    Allomas(const Allomas &) = default;
-    Allomas &operator=(Allomas &&) = default;
-    Allomas &operator=(const Allomas &) = default;
+    Allomas(string allomasNev, int sorszam);
     ~Allomas();
-
+    bool operator==(const Allomas& rhs);
 private:
-    
+    string nev;
 };
 
 #endif // !ALLOMAS_HPP
