@@ -48,7 +48,7 @@ class Allomas {
     + ~Allomas()
 }
 
-Palya <|-- Vonat
+Palya <-- Vonat
 
 class Vonat {
 	- size_t vonatszam
@@ -66,7 +66,7 @@ class Vonat {
 }
 
 
-Vonat <|-- Kocsi
+Vonat <-- Kocsi
 
 class Kocsi {
 	- size_t szam
@@ -81,7 +81,7 @@ class Kocsi {
 }
 
 
-Jegy <|-- Vonat
+Jegy <-- Vonat
 
 class Jegy {
 	- size_t szam
@@ -100,3 +100,29 @@ class Jegy {
 
 ```
 
+## Megvalósítás
+
+
+
+## TODO 
+
+- [ ] `README.MD`
+  - [x] class diagram
+  - [ ] megvalósítás
+  - [ ] osztályok leírása
+  - [ ] TODO lista befejezése
+  - [ ] lisence
+- [ ] `vonat.cpp`
+- [ ] `jegy.cpp`
+- [ ] `allomas.cpp`
+- [ ] `palya.cpp`
+  - [ ] Mentés
+  - [ ] Betöltés / létrehozás
+- [x] `vonat.hpp`
+- [x] `jegy.hpp`
+- [x] `allomas.hpp`
+- [x] `palya.hpp`
+- [ ] `main.cpp`
+  - Tesztek
+    - [ ] Mentés
+    - [ ] Jegykiadás 
