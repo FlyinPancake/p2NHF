@@ -7,13 +7,43 @@
 class Kocsi
 {
 private:
-    size_t szam;
-    size_t helyekSzama;
-    bool helyek[]; 
+    const size_t szam;
+    const size_t helyekSzama;
+    bool *helyek; 
 public:
-    Kocsi();
+
+    /**
+     * Kocsi 
+     * 
+     * @param  {size_t} id       : 
+     * @param  {size_t} helyekSz : 
+     * Kocsi ctor
+     */
+    Kocsi(size_t id, size_t helyekSz);
+
     ~Kocsi();
+
+    /**
+     * 
+     * @param  {size_t} hely : 
+     * @return {bool}        :
+     * visszaadja hogy szabad-e a hely 
+     */
     bool CheckOcc(size_t hely);
+
+    /**
+     * 
+     * @param  {size_t} hely : 
+     * @return {bool}        : 
+     * irhatunk a hely tombbe kozvetlenul
+     */
+    bool &operator[](size_t hely);
+
+    /**
+     * 
+     * @param  {size_t} hely : 
+     * lefoglalja a parameterben kapott helyet
+     */
     void Occupy(size_t hely);
 };
 
