@@ -73,7 +73,7 @@ class Kocsi {
 	- size_t helyekSzama
 	- bool helyek[helyekSzama]
 
-	+ Kocsi()
+	+ Kocsi(size_t id, size_t helyekSz)
 	+ ~Kocsi()
 	+ bool CheckOcc(size_t hely)
 	+ Occupy(size_t hely)
@@ -113,6 +113,8 @@ class Jegy {
   - [ ] TODO lista befejezése
   - [ ] lisence
 - [ ] `vonat.cpp`
+  - [ ] Kocsi
+  - [ ] Vonat
 - [ ] `jegy.cpp`
 - [ ] `allomas.cpp`
 - [ ] `palya.cpp`

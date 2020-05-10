@@ -17,16 +17,22 @@ public:
      * 
      * @param  {size_t} id       : 
      * @param  {size_t} helyekSz : 
-     * Kocsi ctor
+     * 
+     * Letrehoz egy Kocsi peldanyt, ugy hogy minden ules szabad.
      */
     Kocsi(size_t id, size_t helyekSz);
-
+    /**
+     * ~Kocsi 
+     * 
+     * Kocsi DTor, torli a memoriabol a helyeket tartalmazo tombot
+     */
     ~Kocsi();
 
     /**
      * 
      * @param  {size_t} hely : 
      * @return {bool}        :
+     * 
      * visszaadja hogy szabad-e a hely 
      */
     bool CheckOcc(size_t hely);
@@ -35,6 +41,7 @@ public:
      * 
      * @param  {size_t} hely : 
      * @return {bool}        : 
+     * 
      * irhatunk a hely tombbe kozvetlenul
      */
     bool &operator[](size_t hely);
@@ -42,6 +49,7 @@ public:
     /**
      * 
      * @param  {size_t} hely : 
+     * 
      * lefoglalja a parameterben kapott helyet
      */
     void Occupy(size_t hely);
