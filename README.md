@@ -15,8 +15,6 @@ A rendszerrel minimum a következő műveleteket kívánjuk elvégezni:
 A rendszer később lehet bővebb funkcionalitású (pl. késések kezelése, vonat törlése, menetrend, stb.), ezért nagyon fontos, hogy jól határozza meg az objektumokat és azok felelősségét.
 Valósítsa meg a jeggyel végezhető összes értelmes műveletet operátor átdefiniálással (overload), de nem kell ragaszkodni az összes operátor átdefiniálásához! A megoldáshoz **ne** használjon STL tárolót!
 
-***
-
 ## Osztálydiagram
 
 ```mermaid

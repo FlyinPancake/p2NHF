@@ -32,6 +32,7 @@ public:
     Vonat();
     Vonat(Allomas *kezo, Allomas *vegzo, tm indul, tm erkez);
     ~Vonat();
+    
 };
 
 
