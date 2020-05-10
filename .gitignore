@@ -88,3 +88,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/c++,linux,windows,visualstudiocode
+
+Release
+Debug
