@@ -4,6 +4,19 @@
 #include "allomas.hpp"
 #include <ctime>
 
+class Kocsi
+{
+private:
+    size_t szam;
+    size_t helyekSzama;
+    bool helyek[]; 
+public:
+    Kocsi();
+    ~Kocsi();
+    bool CheckOcc(size_t hely);
+    void Occupy(size_t hely);
+};
+
 class Vonat
 {
 private:
@@ -21,18 +34,7 @@ public:
     ~Vonat();
 };
 
-class Kocsi
-{
-private:
-    size_t szam;
-    size_t helyekSzama;
-    bool helyek[]; 
-public:
-    Kocsi();
-    ~Kocsi();
-    bool CheckOcc(size_t hely);
-    void Occupy(size_t hely);
-};
+
 
 
 

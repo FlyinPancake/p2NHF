@@ -8,8 +8,8 @@
 using std::string;
 
 #include <iostream>
-using std::ifstream;
-using std::ofstream;
+using std::istream;
+using std::ostream;
 
 class Palya
 {
@@ -24,7 +24,7 @@ private:
 
 public:
     Palya();
-    Palya(ifstream is);
+    Palya(istream is);
     ~Palya();
 
     void AddStation(string stationName);
@@ -34,7 +34,7 @@ public:
     void AddTrain(Vonat v);
     void RemTrain(Vonat v);
 
-    void Save(ofstream& os);
+    void Save(ostream& os);
 };
 
 
