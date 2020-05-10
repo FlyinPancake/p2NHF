@@ -33,11 +33,15 @@ Palya : + EditStation(string, size_t)
 Palya : + RemStation(size_t)
 Palya : + AddTrain(Vonat)
 Palya : + Save(ostream)
+Palya : + ~Palya()
 
 Allomas : - std::string nev
+
 Allomas : + Allomas(std::string, size_t)
 Allomas : + operator==(Allomas)
 Allomas : + operator!=(Allomas)
+Allomas : + ~Allomas()
+
 Palya <|-- Vonat
 Vonat : - size_t vonatszam
 Vonat : - Allomas* kezdo
