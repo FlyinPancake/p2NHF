@@ -7,20 +7,25 @@
 class Kocsi
 {
 private:
-    const size_t szam;
-    const size_t helyekSzama;
+    size_t helyekSzama;
     bool *helyek; 
 public:
 
     /**
      * Kocsi 
      * 
-     * @param  {size_t} id       : 
+     */
+    Kocsi();
+
+    /**
+     * Kocsi 
+     * 
      * @param  {size_t} helyekSz : 
      * 
      * Letrehoz egy Kocsi peldanyt, ugy hogy minden ules szabad.
      */
-    Kocsi(size_t id, size_t helyekSz);
+    Kocsi(size_t helyekSz);
+    
     /**
      * ~Kocsi 
      * 
@@ -61,15 +66,45 @@ private:
     size_t vonatszam;
     Allomas* kezdo;
     Allomas* vegzo;
-    tm induls;
-    tm erkezes; 
+    tm indulas;
+    tm erkezes;
 
     size_t kocsikSzama;
-    Kocsi kocsik[];
+    Kocsi *kocsik;
 public:
+
+    /**
+     * Vonat 
+     * 
+     * parameter nelkel hivhato CTor csak tomb kesztiesehez, : 
+     * NEM SZABAD mashol hasznalni!
+     */
     Vonat();
-    Vonat(Allomas *kezo, Allomas *vegzo, tm indul, tm erkez);
+
+    /**
+     * Vonat 
+     * 
+     * @param  {Allomas*} kezo    : 
+     * @param  {Allomas*} vegzo   : 
+     * @param  {tm} indul         : 
+     * @param  {tm} erkez         : 
+     * @param  {size_t} kocsiszam : 
+     * @param  {size_t} ulohely   : 
+     */
+    Vonat(Allomas *kezo, Allomas *vegzo, tm indul, tm erkez, size_t kocsiszam, size_t ulohely);
+    
+    /**
+     * ~Vonat 
+     * 
+     */
     ~Vonat();
+
+    /**
+     * 
+     * @return {bool}  : 
+     * Ha ervenyes a vonat, igazat ad
+     */
+    bool IsVald();
     
 };
 

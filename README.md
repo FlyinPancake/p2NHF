@@ -43,8 +43,8 @@ class Allomas {
 	- std::string nev
 
     + Allomas(std::string, size_t)
-    + operator==(Allomas)
-    + operator!=(Allomas)
+    + bool operator==(Allomas)
+    + bool operator!=(Allomas)
     + ~Allomas()
 }
 
@@ -63,6 +63,7 @@ class Vonat {
 	+ Vonat()
 	+ Vonat(Allomas *kezdo, Allomas *vegzo, std::tm indul, std::tm erkez)
 	+ ~Vonat()
+	+ bool IsValid()
 }
 
 
