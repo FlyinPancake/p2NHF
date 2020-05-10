@@ -19,68 +19,84 @@ Valósítsa meg a jeggyel végezhető összes értelmes műveletet operátor át
 
 ```mermaid
 classDiagram
-Palya <|-- Allomas
-Palya : - Allomas* allomasLista
-Palya : - size_t hossz
-Palya : - size_t maxHossz
-Palya : - Vonat[maxVon] vonatok
-Palya : - size_t vonatszam
-Palya : - size_t maxVona
-Palya : + Palya(maxHossz)
-Palya : + Palya(istream)
-Palya : + AddStation(string)
-Palya : + EditStation(string, size_t)
-Palya : + RemStation(size_t)
-Palya : + AddTrain(Vonat)
-Palya : + Save(ostream)
-Palya : + ~Palya()
 
-Allomas : - std::string nev
+class Palya {
+    - Allomas* allomasLista
+    - size_t hossz
+    - size_t maxHossz
+    - Vonat[maxVon] vonatok
+    - size_t vonatszam
+    - size_t maxVona
+    + Palya(maxHossz)
+    + Palya(istream)
+    + AddStation(string)
+    + EditStation(string, size_t)
+    + RemStation(size_t)
+    + AddTrain(Vonat)
+    + Save(ostream)
+    + ~Palya()
+}
 
-Allomas : + Allomas(std::string, size_t)
-Allomas : + operator==(Allomas)
-Allomas : + operator!=(Allomas)
-Allomas : + ~Allomas()
+Palya <-- Allomas
+
+class Allomas {
+	- std::string nev
+
+    + Allomas(std::string, size_t)
+    + operator==(Allomas)
+    + operator!=(Allomas)
+    + ~Allomas()
+}
 
 Palya <|-- Vonat
-Vonat : - size_t vonatszam
-Vonat : - Allomas* kezdo
-Vonat : - Allomas* vegzo
-Vonat : - std::tm indulas
-Vonat : - std::tm erkezes
 
-Vonat : - size_t kocsikSzama
-Vonat : - Kocsi kocsik[kocsikSzama]
+class Vonat {
+	- size_t vonatszam
+	- Allomas* kezdo
+	- Allomas* vegzo
+	- std::tm indulas
+	- std::tm erkezes
 
-Vonat : + Vonat()
-Vonat : + Vonat(Allomas *kezdo, Allomas *vegzo, std::tm indul, std::tm erkez)
-Vonat : + ~Vonat()
+	- size_t kocsikSzama
+	- Kocsi kocsik[kocsikSzama]
+
+	+ Vonat()
+	+ Vonat(Allomas *kezdo, Allomas *vegzo, std::tm indul, std::tm erkez)
+	+ ~Vonat()
+}
 
 
 Vonat <|-- Kocsi
-Kocsi : - size_t szam
-Kocsi : - size_t helyekSzama
-Kocsi : - bool helyek[helyekSzama]
 
-Kocsi : + Kocsi()
-Kocsi : + ~Kocsi()
-Kocsi : + bool CheckOcc(size_t hely)
-Kocsi : + Occupy(size_t hely)
-Kocsi : + operator[]()
+class Kocsi {
+	- size_t szam
+	- size_t helyekSzama
+	- bool helyek[helyekSzama]
+
+	+ Kocsi()
+	+ ~Kocsi()
+	+ bool CheckOcc(size_t hely)
+	+ Occupy(size_t hely)
+	+ operator[]()
+}
+
 
 Jegy <|-- Vonat
 
-Jegy : - size_t szam
-Jegy : - size_t helyekszama
-Jegy : - bool helyek[helyekszama]
+class Jegy {
+	- size_t szam
+	- size_t helyekszama
+	- bool helyek[helyekszama]
 
-Jegy : + Jegy(Vonat*, size_t kocsi, size_t ules)
-Jegy : + Jegy(Jegy)
-Jegy : + ~Jegy()
-Jegy : + operator=()
-Jegy : + operator==()
-Jegy : + operator!=()
-Jegy : + operator<<()
+	+ Jegy(Vonat*, size_t kocsi, size_t ules)
+	+ Jegy(Jegy)
+	+ ~Jegy()
+	+ operator=()
+	+ operator==()
+	+ operator!=()
+	+ operator<<()
+}
+
 
 ```
 
