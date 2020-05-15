@@ -1,11 +1,12 @@
 #include "vonat.hpp"
+#include <iostream>
 
 // Kocsi
 
 Kocsi::Kocsi(size_t helyekSz) : helyekSzama(helyekSz)
 {
     helyek = new bool[helyekSzama];
-    for (int i = 0; i < helyekSzama; i++)
+    for (size_t i = 0; i < helyekSzama; i++)
     {
         helyek[i] = true;
     }
@@ -16,7 +17,7 @@ Kocsi::Kocsi() : helyekSzama(0),
 
 Kocsi::~Kocsi()
 {
-    delete[] helyek;
+    delete[] helyek;   
 }
 
 bool Kocsi::CheckOcc(size_t hely)

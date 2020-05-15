@@ -84,14 +84,14 @@ public:
     /**
      * Vonat 
      * 
-     * @param  {Allomas*} kezo    : 
+     * @param  {Allomas*} kezdo    : 
      * @param  {Allomas*} vegzo   : 
      * @param  {tm} indul         : 
      * @param  {tm} erkez         : 
      * @param  {size_t} kocsiszam : 
      * @param  {size_t} ulohely   : 
      */
-    Vonat(Allomas *kezo, Allomas *vegzo, tm indul, tm erkez, size_t kocsiszam, size_t ulohely);
+    Vonat(Allomas *kezdo, Allomas *vegzo, tm indul, tm erkez, size_t kocsiszam, size_t ulohely);
     
     /**
      * ~Vonat 

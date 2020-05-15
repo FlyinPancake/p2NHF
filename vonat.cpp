@@ -24,6 +24,11 @@ Vonat::Vonat(Allomas *kezdo, Allomas *vegzo, tm indul, tm erkez, size_t kocsisza
     
 }
 
+Vonat::~Vonat() 
+{   
+    delete[] kocsik;
+}
+
 bool Vonat::IsVald()
 {
     return (vonatszam != 0);
