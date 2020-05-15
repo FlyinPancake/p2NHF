@@ -1,0 +1,35 @@
+[
+ {
+  "directory": "/mnt/c/Users/flyinpancake/Documents/prog/cpp/NHF",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-Wall",
+   "vonat.cpp"
+  ],
+  "file": "vonat.cpp"
+ },
+ {
+  "directory": "/mnt/c/Users/flyinpancake/Documents/prog/cpp/NHF",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-Wall",
+   "kocsi.cpp"
+  ],
+  "file": "kocsi.cpp"
+ },
+ {
+  "directory": "/mnt/c/Users/flyinpancake/Documents/prog/cpp/NHF",
+  "arguments": [
+   "g++",
+   "-g",
+   "-c",
+   "-Wall",
+   "main.cpp"
+  ],
+  "file": "main.cpp"
+ }
+]

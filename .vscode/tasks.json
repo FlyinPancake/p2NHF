@@ -1,0 +1,66 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "main",
+            "windows": {
+                "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe",
+
+            },
+            "command" : "g++",
+            "args": [
+                "-g",
+                "${workspaceRoot}/main.o",
+                "${workspaceRoot}/kocsi.o",
+                "${workspaceRoot}/vonat.o",
+                "-o",
+                "${workspaceRoot}/bin/main"
+            ],
+            "dependsOn":["kocsi","main_o","vonat"]
+        },
+        {
+            "type": "shell",
+            "label": "kocsi",
+            "command": "g++",
+            "windows":{
+                "command": "g++"
+            },
+            "args": [
+                "-g",
+                "${workspaceRoot}/kocsi.cpp",
+                "-c",
+                "-Wall"
+            ]
+                 
+        },
+        {
+            "type": "shell",
+            "label": "main_o",
+            "command": "/bin/g++",
+            "windows":{
+                "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe"
+            },
+            "args": [
+                "-c",
+                "-Wall",
+                "-g",
+                "${workspaceRoot}/main.cpp"
+            ]
+        },
+        {
+            "label": "vonat",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "vonat.o"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "make",
+            "type": "shell",
+            "command" : "make cnall"
+        }
+    ],
+    "version": "2.0.0"
+}
