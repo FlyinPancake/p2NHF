@@ -1,6 +1,8 @@
 #ifndef VONAT_HPP
 #define VONAT_HPP
 
+
+
 #include "allomas.hpp"
 #include <ctime>
 
@@ -8,14 +10,15 @@ class Kocsi
 {
 private:
     size_t helyekSzama;
-    bool *helyek; 
+    bool *helyek;
 public:
 
     /**
      * Kocsi 
      * 
      */
-    Kocsi();
+    Kocsi() : helyekSzama(0),
+              helyek(nullptr) {}
 
     /**
      * Kocsi 
@@ -57,7 +60,15 @@ public:
      * 
      * lefoglalja a parameterben kapott helyet
      */
-    void Occupy(size_t hely);
+    void OccupySeat(size_t hely) { helyek[hely] = false; }
+
+    /**
+     * 
+     * @param  {size_t} hely : 
+     * 
+     * felszabaditja a parameterben kapott helyet
+     */
+    void FreeSeat(size_t hely) { helyek[hely] = true; }
 };
 
 class Vonat
@@ -70,16 +81,9 @@ private:
     tm erkezes;
 
     size_t kocsikSzama;
-    Kocsi *kocsik;
+    Kocsi **kocsik;
 public:
 
-    /**
-     * Vonat 
-     * 
-     * parameter nelkel hivhato CTor csak tomb kesztiesehez, : 
-     * NEM SZABAD mashol hasznalni!
-     */
-    Vonat();
 
     /**
      * Vonat 

@@ -11,9 +11,6 @@ Kocsi::Kocsi(size_t helyekSz) : helyekSzama(helyekSz)
         helyek[i] = true;
     }
 }
-Kocsi::Kocsi() : helyekSzama(0),
-                 helyek(nullptr)
-{}
 
 Kocsi::~Kocsi()
 {
@@ -25,12 +22,8 @@ bool Kocsi::CheckOcc(size_t hely)
     return helyek[hely];
 }
 
+
 bool &Kocsi::operator[](size_t hely)
 {
     return helyek[hely];
-}
-
-void Kocsi::Occupy(size_t hely)
-{
-    helyek[hely] = false;
 }
