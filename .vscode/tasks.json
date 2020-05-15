@@ -57,7 +57,7 @@
             "problemMatcher": []
         },
         {
-            "label": "make",
+            "label": "make and clean",
             "type": "shell",
             "command" : "make cnall"
         }
