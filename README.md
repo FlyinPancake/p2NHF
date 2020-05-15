@@ -21,10 +21,10 @@ Valósítsa meg a jeggyel végezhető összes értelmes műveletet operátor át
 classDiagram
 
 class Palya {
-    - Allomas* allomasLista
+    - Allomas** allomasLista
     - size_t hossz
     - size_t maxHossz
-    - Vonat[maxVon] vonatok
+    - Vonat*[maxVon] vonatok
     - size_t vonatszam
     - size_t maxVona
     + Palya(maxHossz)
@@ -66,7 +66,6 @@ class Vonat {
 	+ bool IsValid()
 }
 
-
 Vonat <-- Kocsi
 
 class Kocsi {
@@ -80,13 +79,12 @@ class Kocsi {
 	+ operator[]()
 }
 
-
 Jegy <-- Vonat
 
 class Jegy {
 	- size_t szam
 	- size_t helyekszama
-	- bool helyek[helyekszama]
+	- bool helyek*[helyekszama]
 
 	+ Jegy(Vonat*, size_t kocsi, size_t ules)
 	+ Jegy(Jegy)
@@ -96,12 +94,9 @@ class Jegy {
 	+ operator!=()
 	+ operator<<()
 }
-
-
 ```
 
 ## Megvalósítás
-
 
 
 ## TODO 
