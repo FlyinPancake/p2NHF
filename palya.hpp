@@ -14,11 +14,11 @@ using std::ostream;
 class Palya
 {
 private:
-    Allomas* allomasLista;
+    Allomas *allomasLista;
     size_t hossz;
     size_t maxHossz;
 
-    Vonat vonatok[];
+    Vonat *vonatok;
     size_t maxVonat;
     size_t vonatszam;
 
