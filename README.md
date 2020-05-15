@@ -70,7 +70,6 @@ class Vonat {
 Vonat <-- Kocsi
 
 class Kocsi {
-	- size_t szam
 	- size_t helyekSzama
 	- bool helyek[helyekSzama]
 
@@ -114,7 +113,7 @@ class Jegy {
   - [ ] TODO lista befejezése
   - [ ] lisence
 - [ ] `vonat.cpp`
-  - [ ] Kocsi
+  - [x] Kocsi
   - [ ] Vonat
 - [ ] `jegy.cpp`
 - [ ] `allomas.cpp`
