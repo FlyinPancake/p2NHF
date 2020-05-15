@@ -1,5 +1,5 @@
-OBJS	= vonat.o kocsi.o main.o
-SOURCE	= vonat.cpp kocsi.cpp main.cpp
+OBJS	= vonat.o kocsi.o main.o palya.o
+SOURCE	= vonat.cpp kocsi.cpp main.cpp palya.cpp
 HEADER	= vonat.hpp allomas.hpp palya.hpp jegy.hpp
 OUT	= vonat
 CC	 = g++
@@ -15,11 +15,13 @@ vonat.o: vonat.cpp
 kocsi.o: kocsi.cpp
 	$(CC) $(FLAGS) kocsi.cpp 
 
+palya.o: palya.cpp
+	$(CC) $(FLAGS) palya.cpp
+
 main.o: main.cpp
 	$(CC) $(FLAGS) main.cpp
 
 cnall: clean all
-	
 
 
 clean:
