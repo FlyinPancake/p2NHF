@@ -12,18 +12,8 @@ Kocsi::Kocsi(size_t helyekSz) : helyekSzama(helyekSz)
     }
 }
 
-Kocsi::~Kocsi()
-{
-    delete[] helyek;   
-}
+Kocsi::~Kocsi() { delete[] helyek; }
 
-bool Kocsi::CheckOcc(size_t hely)
-{
-    return helyek[hely];
-}
+bool Kocsi::CheckOcc(size_t hely) { return helyek[hely]; }
 
-
-bool &Kocsi::operator[](size_t hely)
-{
-    return helyek[hely];
-}
+bool &Kocsi::operator[](size_t hely) { return helyek[hely]; }

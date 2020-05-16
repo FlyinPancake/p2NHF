@@ -1,8 +1,6 @@
 #ifndef VONAT_HPP
 #define VONAT_HPP
 
-
-
 #include "allomas.hpp"
 #include <ctime>
 
