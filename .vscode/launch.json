@@ -67,10 +67,10 @@
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
-                },
-                {
-                    "text": "set substitute-path /build/gcc/src/gcc-build/x86_64-pc-linux-gnu/libstdc++-v3/include /usr/include/c++/10.1.0"
                 }
+                /*{
+                    //"text": "set substitute-path /build/gcc/src/gcc-build/x86_64-pc-linux-gnu/libstdc++-v3/include /usr/include/c++/10.1.0"
+                }*/
             ],
             "preLaunchTask": "make and clean"
         },
