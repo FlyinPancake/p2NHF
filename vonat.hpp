@@ -137,6 +137,15 @@ public:
     
     bool ReserveSeat(size_t kocsiSzam, size_t helySzam);
 
+    bool SeatExist(size_t kocsiSzam, size_t helySzam);
+
+    bool CheckSeat(size_t kocsiSzam, size_t helyszam)
+    {
+        if (SeatExist(kocsiSzam, helyszam))
+            return kocsik[kocsiSzam] -> CheckOcc(helyszam);
+        return false;
+    }
+
     friend std::ostream& operator<<(std::ostream& os, Vonat& vt) 
     {
         os << "Vonat szama: " << vt.vonatszam << std::endl

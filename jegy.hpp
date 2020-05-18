@@ -20,18 +20,18 @@ public:
      * @param  {size_t} kocsi : hanyadik kocsiba szól a jegy
      * @param  {size_t} ules  : hányas számú ülésre szól a jegy
      */
-    Jegy(Vonat *jarat, size_t kocsi, size_t ules):  kocsi(kocsi), 
+    Jegy(Vonat *jarat, size_t kocsi, size_t ules):  jarat(jarat),
+                                                    kocsi(kocsi),
                                                     ules(ules), 
-                                                    jarat(jarat),
-                                                    validity(true)
+                                                    validity(false)
     {
         if(!(jarat -> IsVald()))
         {
-            throw "Nem ervenyes VONAT";
+            throw "Nem ervenyes VONAT"; 
             return;
         }
 
-        
+        validity = (jarat -> ReserveSeat(kocsi, ules));
     }
     
     /**
@@ -39,7 +39,10 @@ public:
      * @param  {Jegy} rhs : 
      * @return {bool}     : 
      */
-    bool operator==(const Jegy &rhs);
+    bool operator==(const Jegy &rhs)
+    {
+        return (rhs.jarat == jarat && rhs.kocsi == kocsi && rhs.ules == ules);
+    }
     
     /**
      * 
@@ -47,13 +50,21 @@ public:
      * @return {bool}     : 
      */
     bool operator!=(const Jegy &rhs);
-
+    
     /**
      * 
      * @param  {std::ostream} os : 
+     * @param  {Jegy} jgy        : 
      * @return {std::ostream}    : 
      */
-    std::ostream operator<<(const std::ostream &os) const;
+    friend std::ostream operator<<(std::ostream &os, const Jegy& jgy);
+    
+    /**
+     * 
+     * @return {bool}  : 
+     */
+    bool GetValidity() { return validity; }
+
 };
 
-#endif // !JEGY_HPP
+#endif // !
