@@ -8,18 +8,33 @@ using std::string;
 class Allomas
 {
 public:
+
+    /**
+     * 
+     * @param  {allomasNev} undefined : Álloműas neve
+     * @return {Allomas(string}       
+     */
     Allomas(string allomasNev) : nev(allomasNev) {}
-
-    bool operator==(const Allomas& rhs)
-    {
-        return (rhs.nev == nev);
-    }
-
-    bool operator!=(const Allomas& rhs)
-    {
-        return (rhs.nev != nev);
-    }
-
+    
+    /**
+     * 
+     * @param  {Allomas} rhs  
+     * @return {bool}        
+     */
+    bool operator==(const Allomas& rhs) { return (rhs.nev == nev); }
+    /**
+     * 
+     * @param  {Allomas} rhs : 
+     * @return {bool}        : 
+     */
+    bool operator!=(const Allomas& rhs) { return (rhs.nev != nev); }
+    
+    /**
+     * 
+     * @param  {std::ostream} os 
+     * @param  {Allomas} all 
+     * @return {std::ostream} 
+     */
     friend std::ostream &operator<<(std::ostream& os,const Allomas &all)
     {
         os << "Allomas: " << all.nev;
@@ -32,6 +47,3 @@ private:
 
 
 #endif // !ALLOMAS_HPP
-
-
-

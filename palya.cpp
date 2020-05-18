@@ -1,5 +1,7 @@
 #include "palya.hpp"
 
+#define MaxKocsihely (size_t)40
+
 Palya::~Palya()
     {
         for (size_t i = 0; i < vonatszam; i++)
@@ -16,3 +18,8 @@ Palya::~Palya()
 
         delete[] allomasLista;
     }
+
+void Palya::AddTrain(Allomas* kezd, Allomas* veg, tm indul, tm erkez, size_t kocsik)
+{
+    vonatok[vonatszam++] = new Vonat(kezd, veg, indul, erkez, kocsik, MaxKocsihely );
+}

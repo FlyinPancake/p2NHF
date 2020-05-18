@@ -1,6 +1,8 @@
 #ifndef PALYA_HPP
 #define PALYA_HPP
 
+
+
 #include "allomas.hpp"
 #include "vonat.hpp"
 
@@ -44,13 +46,14 @@ public:
     }
     void EditSation(string stationName, size_t sorszam);
     void RemStation(size_t sorszam);
-    Allomas& GetStation(size_t sorszam) { return *allomasLista[sorszam]; }
+    Allomas *GetStation(size_t sorszam) { return allomasLista[sorszam]; }
 
     //TODO
 
 
     void AddTrain(Vonat v);
-    void AddTrain(int kezd, int veg, tm indul, tm erkez, int kocsik);
+    void AddTrain(Allomas* kezd, Allomas* veg, tm indul, tm erkez, size_t kocsik);
+    Vonat *GetTrain(size_t sorszam) { return vonatok[sorszam]; }
     void RemTrain(Vonat v);
 
     void Save(ostream& os);
@@ -63,8 +66,10 @@ public:
         }
         
     }
+
+    size_t Hossz() { return hossz; }
+    size_t Vonatok() { return vonatszam; }
+
 };
-
-
 
 #endif // !PALYA_HPP
