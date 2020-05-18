@@ -6,6 +6,7 @@ Palya::~Palya()
     {
         for (size_t i = 0; i < vonatszam; i++)
         {
+            std::cout << "Deleting vonatok[" << i << std::endl;
             delete vonatok[i];
         }
 
@@ -21,5 +22,10 @@ Palya::~Palya()
 
 void Palya::AddTrain(Allomas* kezd, Allomas* veg, tm indul, tm erkez, size_t kocsik)
 {
-    vonatok[vonatszam++] = new Vonat(kezd, veg, indul, erkez, kocsik, MaxKocsihely );
+    AddTrain(Vonat(kezd, veg, indul, erkez, kocsik, MaxKocsihely ));
+}
+
+void Palya::AddTrain(const Vonat& vt)
+{
+    vonatok[vonatszam++] = new Vonat(vt);
 }

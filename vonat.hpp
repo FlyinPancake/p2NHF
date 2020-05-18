@@ -26,7 +26,24 @@ public:
      * Letrehoz egy Kocsi peldanyt, ugy hogy minden ules szabad.
      */
     Kocsi(size_t helyekSz);
+
+    Kocsi(const Kocsi &kcs): helyekSzama(kcs.helyekSzama)
+    {
+        helyek = new bool[helyekSzama];
+        for (size_t i = 0; i < helyekSzama; i++)
+        {
+            helyek[i] = kcs.helyek[i];
+        }
+        
+    }
     
+    /**
+     * 
+     * @param  {Kocsi} kocsi : 
+     * @return {Kocsi}       : 
+     */
+    Kocsi& operator=(const Kocsi &kocsi);
+
     /**
      * ~Kocsi 
      * 
@@ -99,6 +116,13 @@ public:
     Vonat(Allomas *kezdo, Allomas *vegzo, tm indul, tm erkez, size_t kocsiszam, size_t ulohely);
     
     /**
+     * Vonat 
+     * 
+     * @param  {Vonat} vt : 
+     */
+    Vonat(const Vonat &vt);
+    
+    /**
      * ~Vonat 
      * 
      */
@@ -113,7 +137,7 @@ public:
     
     bool ReserveSeat(size_t kocsiSzam, size_t helySzam);
 
-    friend std::ostream& operator<<(std::ostream& os, Vonat vt) 
+    friend std::ostream& operator<<(std::ostream& os, Vonat& vt) 
     {
         os << "Vonat szama: " << vt.vonatszam << std::endl
         << "Indulo " << *vt.kezdo << std::endl
@@ -123,6 +147,8 @@ public:
 
         return os;
     }
+
+    Vonat &operator=(const Vonat &vt);
 };
 
 #endif // !VONAT_HPP

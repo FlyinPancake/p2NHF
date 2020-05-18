@@ -8,7 +8,6 @@ Vonat::Vonat(Allomas *kezdo, Allomas *vegzo, tm indul, tm erkez, size_t kocsisza
                                                                                                      erkezes(erkez),
                                                                                                      kocsikSzama(kocsiszam)
 {
-    //TODO VONATSZAM !!!!
     vonatszam = ++aktVonat;
     
     kocsik = new Kocsi*[kocsikSzama];
@@ -19,13 +18,27 @@ Vonat::Vonat(Allomas *kezdo, Allomas *vegzo, tm indul, tm erkez, size_t kocsisza
     
 }
 
+Vonat::Vonat(const Vonat &vt)                              
+{    
+    kocsikSzama = vt.kocsikSzama;
+    kocsik = new Kocsi*[kocsikSzama];
+    for (size_t i = 0; i < kocsikSzama; i++)
+        kocsik[i] = new Kocsi(*vt.kocsik[i]);
+    
+    indulas = vt.indulas;
+    erkezes = vt.erkezes;
+    kezdo = vt.kezdo;
+    vegzo = vt.vegzo;
+    vonatszam = vt.vonatszam;
+}
+
 Vonat::~Vonat()
 {
     for (size_t i = 0; i < kocsikSzama; i++)
     {
         delete kocsik[i];
+
     }
-    
     delete[] kocsik;
 }
 
@@ -52,3 +65,27 @@ bool Vonat::ReserveSeat(size_t kocsiSzam, size_t helySzam)
     kocsik[kocsiSzam]-> OccupySeat(helySzam);
     return true;
 }
+
+Vonat& Vonat::operator=(const Vonat &vt)
+    {
+        if (this != &vt)
+        {
+            for (size_t i = 0; i < kocsikSzama; i++)
+                delete kocsik[i];
+            delete[] kocsik; 
+        
+            
+            kocsikSzama = vt.kocsikSzama;
+            kocsik = new Kocsi*[kocsikSzama];
+            for (size_t i = 0; i < kocsikSzama; i++)
+                kocsik[i] = new Kocsi(*vt.kocsik[i]);
+            
+            indulas = vt.indulas;
+            erkezes = vt.erkezes;
+            kezdo = vt.kezdo;
+            vegzo = vt.vegzo;
+            vonatszam = vt.vonatszam;
+        }
+        return *this;
+    }
+

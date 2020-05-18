@@ -51,10 +51,10 @@ public:
     //TODO
 
 
-    void AddTrain(Vonat v);
+    void AddTrain(const Vonat &v);
     void AddTrain(Allomas* kezd, Allomas* veg, tm indul, tm erkez, size_t kocsik);
     Vonat *GetTrain(size_t sorszam) { return vonatok[sorszam]; }
-    void RemTrain(Vonat v);
+    void RemTrain(size_t id);
 
     void Save(ostream& os);
 
