@@ -48,9 +48,6 @@ public:
     void RemStation(size_t sorszam);
     Allomas *GetStation(size_t sorszam) { return allomasLista[sorszam]; }
 
-    //TODO
-
-
     void AddTrain(const Vonat &v);
     void AddTrain(Allomas* kezd, Allomas* veg, tm indul, tm erkez, size_t kocsik);
     Vonat *GetTrain(size_t sorszam) { return vonatok[sorszam]; }

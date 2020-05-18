@@ -6,7 +6,6 @@ Palya::~Palya()
     {
         for (size_t i = 0; i < vonatszam; i++)
         {
-            std::cout << "Deleting vonatok[" << i << std::endl;
             delete vonatok[i];
         }
 
